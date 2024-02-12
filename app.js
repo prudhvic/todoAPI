@@ -3,6 +3,9 @@ require('dotenv').config()
 const { getTodos, createTodo, getTodo, deleteTodo, updateTodo } = require('./db')
 let app = express()
 app.use(express.json())
+app.get("/", (req, res) => {
+    res.json({ message: "welcome" })
+})
 app.get("/todos", async (req, res) => {
     try {
         let todos = await getTodos()
