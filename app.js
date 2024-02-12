@@ -57,6 +57,6 @@ app.patch("/todos/:id", async (req, res) => {
         res.status(500).json({ error: err.message })
     }
 })
-app.listen(3000, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log('listening')
 })
